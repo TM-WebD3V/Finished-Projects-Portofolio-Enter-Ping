@@ -93,14 +93,22 @@ select {
   --franklin-700: 700;
 }
 
+/* *helper */
+.error {
+  outline: 1px solid var(--Light-Red);
+}
+.none {
+  display: none;
+}
+/* ?main code */
 .logo img {
-  max-width: 5rem;
+  width: min(7rem, 40vw);
   margin: 7em auto 0 auto;
 }
 .soon {
   font-family: var(--ff-franklin);
   font-weight: var(--franklin-300);
-  font-size: min(1.5rem, 70vw);
+  font-size: min(3rem, 70vw);
   color: var(--Gray);
   margin-block-start: 1.8em;
 }
@@ -111,7 +119,7 @@ select {
   color: var(--Very-Dark-Blue);
 }
 .sub {
-  font-size: 0.9rem;
+  font-size: min(1.2rem, 50vw);
   margin-block: 1em 2em;
   color: var(--Very-Dark-Blue);
 }
@@ -125,10 +133,10 @@ select {
 }
 #emailad {
   border-radius: 2em;
-  outline: 1px solid var(--Light-Red);
   border: none;
   width: min(80vw, 20rem);
-  padding: 0.5em 2em;
+  padding: 0.8em 2em;
+  outline: 1px solid var(--Gray);
 }
 #emailad::placeholder {
   font-family: var(--ff-franklin);
@@ -142,6 +150,14 @@ select {
   font-size: 0.8rem;
   margin-block: 0.4em 1.5em;
 }
+.caught-error {
+  position: relative;
+}
+
+.caught {
+  position: absolute;
+  left: 6.5rem;
+}
 
 .validation-section {
   text-align: center;
@@ -154,10 +170,10 @@ select {
   background-color: var(--Blue);
   font-size: 0.9em;
   border-radius: 2em;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   width: min(80vw, 20rem);
   border: none;
-  padding: 0.5em 2em;
+  padding: 0.8em 2em;
   color: white;
 }
 
@@ -170,8 +186,8 @@ select {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: min(95vw, 24rem);
-  height: 20em;
+  width: min(95vw, 60rem);
+  height: min(30em, 50vh);
   margin: 0 auto 5rem auto;
 }
 .copyright {
@@ -195,4 +211,78 @@ select {
   border: 1px solid var(--Gray);
   padding: 0.4em;
   text-align: center;
+}
+
+.fa-brands:hover {
+  background-color: var(--Blue);
+  color: white;
+  transition: 4ms ease-in-out;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .header {
+    grid-row: span 2;
+  }
+
+  .logo {
+    grid-column: span 2;
+    margin-bottom: 2.5em;
+  }
+  .decorative-img {
+    grid-column: span 2;
+  }
+  .flex-buttons {
+    grid-row: span 2;
+  }
+
+  .validation-section {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .caught {
+    margin-inline-start: 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  main {
+    display: initial;
+  }
+  .validation-section {
+    margin: 0;
+    flex: 70%;
+  }
+  .flex-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50rem;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+  .notify {
+    margin: 0;
+    flex: 30%;
+    padding-block: 0.8rem;
+    padding-inline: 0.5rem;
+  }
+  #emailad {
+    width: 100%;
+  }
+  .caught-error {
+    position: relative;
+  }
+
+  .caught {
+    position: absolute;
+    left: initial;
+  }
+
+  .decorative-img {
+    margin-top: 5em;
+  }
 }
