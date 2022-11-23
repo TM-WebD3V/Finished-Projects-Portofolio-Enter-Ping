@@ -108,7 +108,7 @@ select {
 .soon {
   font-family: var(--ff-franklin);
   font-weight: var(--franklin-300);
-  font-size: min(3rem, 70vw);
+  font-size: min(3rem, 14vw);
   color: var(--Gray);
   margin-block-start: 1.8em;
 }
